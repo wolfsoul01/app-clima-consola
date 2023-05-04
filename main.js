@@ -1,4 +1,9 @@
-import inquire from 'inquire';
+import inquire from "inquire";
 import "colors";
 
-console.log("Hola mundo".green);
+const main = async () => {
+
+    console.log("Hola mundo ");
+};
+
+main();

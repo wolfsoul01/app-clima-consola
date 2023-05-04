@@ -6,7 +6,8 @@
   "main": "index.js",
   "type":"module",
   "scripts": {
-    "start": "node main.js"
+    "start": "node main.js",
+    "dev" : "node --watch main.js"
   },
   "keywords": [],
   "author": "",
