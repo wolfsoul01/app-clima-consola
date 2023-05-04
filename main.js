@@ -14,6 +14,16 @@ const main = async () => {
     switch (opt) {
       case 1:
         // mostrar mensaje 
+
+        //Buscar los lugar 
+
+        //MOstrar los lugares que coicidan 
+
+        //Selecionar el lugar 
+
+        //clima 
+
+        //Mostar resultados 
         break;
 
       case 2:
