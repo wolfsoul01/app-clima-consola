@@ -48,4 +48,19 @@ const pausa = async () => {
     await inquire.prompt(preguntas);
   };
 
-export { inquireMenu,pausa };
+  const leerInput=async ()=>{
+    const pregunta =[{
+      type:"input",
+      name:"lugar",
+      message:"Que ciudad desea buscar ",
+      validate:(opt='')=>{
+
+         return opt.length===0?"Estta vacio ":true
+
+      }
+    }]
+
+    return await inquire.prompt(pregunta);
+  }
+
+export { inquireMenu,pausa ,leerInput};
