@@ -3,8 +3,7 @@ import "colors";
 
 /* Aqui van los menus de inquire para interactuar */
 
-
-//Menu principal 
+//Menu principal
 const inquireMenu = async () => {
   const preguntas = [
     {
@@ -14,15 +13,11 @@ const inquireMenu = async () => {
       choices: [
         {
           value: "1",
-          name: `${"1.".green} Crear tarea`,
+          name: `${"1.".green} Buscar Ciudad `,
         },
         {
           value: "2",
-          name: `${"2.".green} Listar tareas`,
-        },
-        {
-          value: "3",
-          name: `${"3.".green} Listar tareas completadas`,
+          name: `${"2.".green} Historial`,
         },
         {
           value: "0",
@@ -41,4 +36,4 @@ const inquireMenu = async () => {
   return opcion;
 };
 
-export {inquireMenu};
+export { inquireMenu };
