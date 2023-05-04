@@ -12,7 +12,7 @@ const main = async () => {
     switch (opt) {
       case 1:
         // mostrar mensaje 
-        const {lugar }=await leerInput("Que ciudad desea Buscar ");
+        const {lugar }=await leerInput("Que ciudad desea Buscar: ");
         console.log(lugar);
         //Buscar los lugar 
 
