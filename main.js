@@ -1,5 +1,5 @@
 import "colors";
-import { inquireMenu, pausa } from "./helpres/inquireMenu.js";
+import { inquireMenu, leerInput, pausa } from "./helpres/inquireMenu.js";
 import Busqueda from "./models/Busqueda.js";
 
 const main = async () => {
@@ -8,13 +8,12 @@ const main = async () => {
 
   do {
     opt = await inquireMenu();
-    console.log(opt);
-
 
     switch (opt) {
       case 1:
         // mostrar mensaje 
-
+        const {lugar }=await leerInput("Que ciudad desea Buscar ");
+        console.log(lugar);
         //Buscar los lugar 
 
         //MOstrar los lugares que coicidan 

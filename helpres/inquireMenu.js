@@ -48,11 +48,11 @@ const pausa = async () => {
     await inquire.prompt(preguntas);
   };
 
-  const leerInput=async ()=>{
+  const leerInput=async (messg)=>{
     const pregunta =[{
       type:"input",
       name:"lugar",
-      message:"Que ciudad desea buscar ",
+      message:messg,
       validate:(opt='')=>{
 
          return opt.length===0?"Estta vacio ":true
