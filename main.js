@@ -15,9 +15,9 @@ const main = async () => {
         break;
     }
     
-    await pausa();
+     if(opt !== 0) await pausa();
     
-  } while (opt != 0);
+  } while (opt !== 0);
 };
 
 main();
