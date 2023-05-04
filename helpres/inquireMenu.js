@@ -36,4 +36,16 @@ const inquireMenu = async () => {
   return opcion;
 };
 
-export { inquireMenu };
+const pausa = async () => {
+    const preguntas = [
+      {
+        type: "input",
+        name: "opt",
+        message: `Presione ${`ENTER`.red} para continuar `,
+      },
+    ];
+    console.log("\n");
+    await inquire.prompt(preguntas);
+  };
+
+export { inquireMenu,pausa };

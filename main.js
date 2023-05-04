@@ -1,5 +1,5 @@
 import "colors";
-import { inquireMenu } from "./helpres/inquireMenu.js";
+import { inquireMenu,pausa } from "./helpres/inquireMenu.js";
 
 const main = async () => {
   let opt;
@@ -14,6 +14,9 @@ const main = async () => {
       case 2:
         break;
     }
+    
+    await pausa();
+    
   } while (opt != 0);
 };
 
