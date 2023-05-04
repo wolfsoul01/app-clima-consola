@@ -12,15 +12,15 @@ const inquireMenu = async () => {
       message: "¿Qué desea hacer?",
       choices: [
         {
-          value: "1",
+          value: 1,
           name: `${"1.".green} Buscar Ciudad `,
         },
         {
-          value: "2",
+          value: 2,
           name: `${"2.".green} Historial`,
         },
         {
-          value: "0",
+          value: 0,
           name: `${"0.".green} Salir`,
         },
       ],
