@@ -40,3 +40,5 @@ const inquireMenu = async () => {
 
   return opcion;
 };
+
+export {inquireMenu};

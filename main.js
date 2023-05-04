@@ -1,9 +1,9 @@
-import inquire from "inquire";
 import "colors";
+import  {inquireMenu}  from "./helpres/inquireMenu.js";
 
 const main = async () => {
 
-    console.log("Hola mundo ".green);
+    let opt = await inquireMenu();
 };
 
 
