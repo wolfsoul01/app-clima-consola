@@ -27,8 +27,8 @@ const main = async () => {
         //Buscar los lugar
         const data = await busqueda.buscarCiudad(lugar);
 
-        const {name,lat,log} = await ciudadesMenu(data);
-
+        const id = await ciudadesMenu(data);
+       const {name,log,lat}= data.find(e=>e.id===id)||'';
         //MOstrar los lugares que coicidan
 
         //Selecionar el lugar
@@ -38,9 +38,9 @@ const main = async () => {
         //Mostar resultados
         console.log('\n Informacion de la Ciudad'.blue);
         console.log('');
-        console.log(`Ciudad: ${name}`);
-        console.log(`Lat: ${lat} `);
-        console.log(`Log: ${log}`);
+        console.log(`Ciudad: ${name||''}`);
+        console.log(`Lat: ${lat||''} `);
+        console.log(`Log: ${log||''}`);
         console.log(`Clima: `);
         console.log(`Temp: `);
         console.log(`Temp-Max: `);
