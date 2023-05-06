@@ -35,8 +35,8 @@ class Busqueda {
         return {
             id:lugar.id,
             name:lugar.place_name,
-            lat:lugar.center[0],
-            log:lugar.center[1]
+            log:lugar.center[0],
+            lat:lugar.center[1]
         };
       });
       return ciudades;
