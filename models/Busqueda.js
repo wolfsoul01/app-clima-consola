@@ -14,16 +14,18 @@ class Busqueda {
     this.historial.push(ciudad);
   }
 
-
+get paramsMapBox(){
+    return{
+        limit:5,
+        access_token:MAPBOX_KEY,
+        language:'es',
+    }
+}
   async buscarCiudad(lugar = "") {
     // peticion http
     const axi= axios.create({
         baseURL:` https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
-        params:{
-            limit:5,
-            access_token:MAPBOX_KEY,
-            language:'es',
-        }
+        params:this.paramsMapBox
 
       })
 
