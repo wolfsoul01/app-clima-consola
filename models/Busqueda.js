@@ -25,10 +25,8 @@ class Busqueda {
 
   get paramsOpeanWather(){
     return {
-        lat,
-        lon,
-        appid:process.env.OPENWEATHER_KEY
-
+        appid:process.env.OPENWEATHER_KEY,
+        lang:'es'
     }
   }
   async buscarCiudad(lugar = "") {
@@ -56,10 +54,16 @@ class Busqueda {
   }
 
   async buscarClima(lat,lon){
-    const axi =axios.create({
-        baseURLhttps:'//api.openweathermap.org/data/2.5/weather',
-        params:this.paramsOpeanWather
-    })
+    try {
+        const axi =axios.create({
+            baseURLhttps:'//api.openweathermap.org/data/2.5/weather',
+            params:{...this.paramsOpeanWather,lat,lon}
+        })
+        
+       const dataClima= await axi.get();
+    } catch (error) {
+        
+    }
   }
 
   guardarBD() {
