@@ -1,7 +1,9 @@
 import "colors";
 import { ciudadesMenu, inquireMenu, leerInput, pausa } from "./helpres/inquireMenu.js";
 import Busqueda from "./models/Busqueda.js";
-import axios from "axios";
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 
 const main = async () => {
   let opt;
