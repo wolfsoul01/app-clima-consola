@@ -28,7 +28,7 @@ const main = async () => {
         const data = await busqueda.buscarCiudad(lugar);
 
         const ciudad = await ciudadesMenu(data);
-        
+
         //MOstrar los lugares que coicidan
 
         //Selecionar el lugar
@@ -37,6 +37,13 @@ const main = async () => {
 
         //Mostar resultados
         console.log('\n Informacion de la Ciudad'.blue);
+        console.log('');
+        console.log(`Ciudad: ${ciudad}`);
+        console.log(`Lat: `);
+        console.log(`Log: `);
+        console.log(`Temp: `);
+        console.log(`Temp-Max: `);
+        console.log(`Temp-Min: `);
         // busqueda.guardarBD();
         break;
 
