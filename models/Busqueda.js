@@ -22,6 +22,15 @@ class Busqueda {
       language: "es",
     };
   }
+
+  get paramsOpeanWather(){
+    return {
+        lat,
+        lon,
+        appid:process.env.OPENWEATHER_KEY
+
+    }
+  }
   async buscarCiudad(lugar = "") {
     // peticion http
     try {
@@ -44,6 +53,13 @@ class Busqueda {
     } catch (error) {
         console.log(error);
     }
+  }
+
+  async buscarClima(lat,lon){
+    const axi =axios.create({
+        baseURLhttps:'//api.openweathermap.org/data/2.5/weather',
+        params:this.paramsOpeanWather
+    })
   }
 
   guardarBD() {
