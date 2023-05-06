@@ -1,6 +1,7 @@
 import "colors";
-import { inquireMenu, leerInput, pausa } from "./helpres/inquireMenu.js";
+import { ciudadesMenu, inquireMenu, leerInput, pausa } from "./helpres/inquireMenu.js";
 import Busqueda from "./models/Busqueda.js";
+import axios from "axios";
 
 const main = async () => {
   let opt;
@@ -20,7 +21,9 @@ const main = async () => {
         const {lugar }=await leerInput("Que ciudad desea Buscar: ");
         busqueda.addLugar(lugar);
         //Buscar los lugar 
+       const data = await busqueda.buscarCiudad(lugar);
 
+       await ciudadesMenu(data);
         //MOstrar los lugares que coicidan 
 
         //Selecionar el lugar 

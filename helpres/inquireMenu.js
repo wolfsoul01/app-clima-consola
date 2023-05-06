@@ -37,30 +37,45 @@ const inquireMenu = async () => {
 };
 
 const pausa = async () => {
-    const preguntas = [
-      {
-        type: "input",
-        name: "opt",
-        message: `Presione ${`ENTER`.red} para continuar `,
+  const preguntas = [
+    {
+      type: "input",
+      name: "opt",
+      message: `Presione ${`ENTER`.red} para continuar `,
+    },
+  ];
+  console.log("\n");
+  await inquire.prompt(preguntas);
+};
+
+const leerInput = async (messg) => {
+  const pregunta = [
+    {
+      type: "input",
+      name: "lugar",
+      message: messg,
+      validate: (opt = "") => {
+        return opt.length === 0 ? "Estta vacio " : true;
       },
-    ];
-    console.log("\n");
-    await inquire.prompt(preguntas);
-  };
+    },
+  ];
 
-  const leerInput=async (messg)=>{
-    const pregunta =[{
-      type:"input",
-      name:"lugar",
-      message:messg,
-      validate:(opt='')=>{
+  return await inquire.prompt(pregunta);
+};
 
-         return opt.length===0?"Estta vacio ":true
+const ciudadesMenu=async (ciudadesArr)=>{
 
-      }
-    }]
+  const choices=ciudadesArr.map(e=>{
+    value:e
+    name:e    
+  })
 
-    return await inquire.prompt(pregunta);
-  }
+  const listaCiudades=[{
+    type:'list',
+    name:'ciudad',
+    choices
+  }]
 
-export { inquireMenu,pausa ,leerInput};
+  return {ciudad} =await inquire.prompt(listaCiudades);
+}
+export { inquireMenu, pausa, leerInput,ciudadesMenu };

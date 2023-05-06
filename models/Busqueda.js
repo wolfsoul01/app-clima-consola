@@ -1,5 +1,7 @@
 import fs from "fs";
-
+import axios from 'axios'
+import { log } from "console";
+const MAPBOX_KEY="pk.eyJ1Ijoia2xlcml0aCIsImEiOiJja2tvZHh4Y3YwMDhnMnBvY3ozbHUxdGJvIn0.3zptKSSxJrM5VmfjnkKMYA"
 class Busqueda {
   ruta = "./bd/historial.txt";
   historial = [];
@@ -15,9 +17,21 @@ class Busqueda {
   async buscarCiudad(lugar = "") {
     // peticion http
 
-    console.log(lugar);
+    const axi= axios.create({
+        baseURL:` https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
+        params:{
+            limit:5,
+            access_token:MAPBOX_KEY,
+            language:'es',
+        }
+      })
 
-    return []; // los lugares
+      const {data}= await axi.get(); // los lugares
+     
+    const ciudades=data.features.map(e=>{
+         return e.place_name
+    }) 
+    return ciudades;
   }
 
   guardarBD() {
