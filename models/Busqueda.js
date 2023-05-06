@@ -31,12 +31,19 @@ class Busqueda {
       });
 
       const { data } = await axi.get(); // los lugares
-
-      const ciudades = data.features.map((e) => {
-        return e.place_name;
+      const ciudades = data.features.map((lugar) => {
+        return {
+            id:lugar.id,
+            name:lugar.place_name,
+            lat:lugar.center[0],
+            log:lugar.center[1]
+        };
       });
       return ciudades;
-    } catch (error) {}
+
+    } catch (error) {
+        console.log(error);
+    }
   }
 
   guardarBD() {

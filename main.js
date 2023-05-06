@@ -28,7 +28,7 @@ const main = async () => {
         const data = await busqueda.buscarCiudad(lugar);
 
         const ciudad = await ciudadesMenu(data);
-        console.log(ciudad);
+        
         //MOstrar los lugares que coicidan
 
         //Selecionar el lugar
@@ -36,7 +36,7 @@ const main = async () => {
         //clima
 
         //Mostar resultados
-
+        console.log('\n Informacion de la Ciudad'.blue);
         // busqueda.guardarBD();
         break;
 
