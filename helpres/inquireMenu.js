@@ -63,18 +63,18 @@ const leerInput = async (messg) => {
   return await inquire.prompt(pregunta);
 };
 
-const ciudadesMenu=async (ciudadesArr)=>{
-
-  const choices=ciudadesArr.map(e=>{
-    return{value:e,
-    name:e }   
-  }) 
-  const listaCiudades=[{
-    type:'list',
-    name:'ciudad',
-    choices
-  }]
-
-  return {ciudad} =await inquire.prompt(listaCiudades);
-}
-export { inquireMenu, pausa, leerInput,ciudadesMenu };
+const ciudadesMenu = async (ciudadesArr) => {
+  const choices = ciudadesArr.map((e) => {
+    return { value: e, name: e };
+  });
+  const listaCiudades = [
+    {
+      type: "list",
+      name: "ciudad",
+      choices,
+    },
+  ];
+  const { ciudad } = await inquire.prompt(listaCiudades)
+  return ciudad;
+};
+export { inquireMenu, pausa, leerInput, ciudadesMenu };

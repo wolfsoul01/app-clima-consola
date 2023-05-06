@@ -23,7 +23,8 @@ const main = async () => {
         //Buscar los lugar 
        const data = await busqueda.buscarCiudad(lugar);
 
-       await ciudadesMenu(data);
+       const ciudad=await ciudadesMenu(data);
+       console.log(ciudad);
         //MOstrar los lugares que coicidan 
 
         //Selecionar el lugar 
