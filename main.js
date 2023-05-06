@@ -14,7 +14,6 @@ const main = async () => {
         // mostrar mensaje 
         const {lugar }=await leerInput("Que ciudad desea Buscar: ");
         busqueda.addLugar(lugar);
-        console.log(lugar);
         //Buscar los lugar 
 
         //MOstrar los lugares que coicidan 
