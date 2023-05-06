@@ -61,8 +61,9 @@ class Busqueda {
         })
         
        const dataClima= await axi.get();
+       return dataClima;
     } catch (error) {
-        
+        console.log(error);
     }
   }
 
