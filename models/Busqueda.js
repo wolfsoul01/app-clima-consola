@@ -1,8 +1,7 @@
 import fs from "fs";
-import axios from 'axios'
+import axios from "axios";
 import * as dotenv from "dotenv";
 dotenv.config();
-
 
 class Busqueda {
   ruta = "./bd/historial.txt";
@@ -16,28 +15,28 @@ class Busqueda {
     this.historial.push(ciudad);
   }
 
-get paramsMapBox(){
-    return{
-        limit:5,
-        access_token:process.env.MAPBOX_KEY,
-        language:'es',
-    }
-}
+  get paramsMapBox() {
+    return {
+      limit: 5,
+      access_token: process.env.MAPBOX_KEY,
+      language: "es",
+    };
+  }
   async buscarCiudad(lugar = "") {
     // peticion http
-    const axi= axios.create({
-        baseURL:` https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
-        params:this.paramsMapBox
+    try {
+      const axi = axios.create({
+        baseURL: ` https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
+        params: this.paramsMapBox,
+      });
 
-      })
+      const { data } = await axi.get(); // los lugares
 
-      const {data}= await axi.get(); // los lugares
-     
-
-    const ciudades=data.features.map(e=>{
-         return e.place_name
-    }) 
-    return ciudades;
+      const ciudades = data.features.map((e) => {
+        return e.place_name;
+      });
+      return ciudades;
+    } catch (error) {}
   }
 
   guardarBD() {
@@ -46,12 +45,9 @@ get paramsMapBox(){
 
   leerBD() {
     if (fs.existsSync(this.ruta)) {
+      const data = fs.readFileSync(this.ruta);
 
-       const data= fs.readFileSync(this.ruta)
-
-      return (data.length===0)?[]:data;
-
-
+      return data.length === 0 ? [] : data;
     }
   }
 }
