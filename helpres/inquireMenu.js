@@ -65,12 +65,10 @@ const leerInput = async (messg) => {
 
 const ciudadesMenu=async (ciudadesArr)=>{
 
-  console.log(ciudadesArr);
   const choices=ciudadesArr.map(e=>{
     return{value:e,
     name:e }   
   }) 
-console.log(choices);
   const listaCiudades=[{
     type:'list',
     name:'ciudad',
