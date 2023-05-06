@@ -1,7 +1,9 @@
 import fs from "fs";
 import axios from 'axios'
-import { log } from "console";
-const MAPBOX_KEY="pk.eyJ1Ijoia2xlcml0aCIsImEiOiJja2tvZHh4Y3YwMDhnMnBvY3ozbHUxdGJvIn0.3zptKSSxJrM5VmfjnkKMYA"
+import * as dotenv from "dotenv";
+dotenv.config();
+
+
 class Busqueda {
   ruta = "./bd/historial.txt";
   historial = [];
@@ -17,7 +19,7 @@ class Busqueda {
 get paramsMapBox(){
     return{
         limit:5,
-        access_token:MAPBOX_KEY,
+        access_token:process.env.MAPBOX_KEY,
         language:'es',
     }
 }
