@@ -6,6 +6,11 @@ const main = async () => {
   let opt;
   const busqueda = new Busqueda();
 
+  const data=busqueda.leerBD();
+
+  data.forEach(e=>{
+    busqueda.addLugar(e)
+  })
   do {
     opt = await inquireMenu();
 
@@ -28,6 +33,7 @@ const main = async () => {
         break;
 
       case 2:
+        busqueda.historial.forEach(e=>console.log(e))
         break;
     }
 
