@@ -7,11 +7,11 @@ const main = async () => {
   let opt;
   const busqueda = new Busqueda();
 
-  const data=busqueda.leerBD();
+ // const data=busqueda.leerBD();
 
-  data.forEach(e=>{
+  /* data.forEach(e=>{
     busqueda.addLugar(e)
-  })
+  }) */
   do {
     opt = await inquireMenu();
 
@@ -33,7 +33,7 @@ const main = async () => {
 
         //Mostar resultados 
 
-        busqueda.guardarBD();
+        // busqueda.guardarBD();
         break;
 
       case 2:

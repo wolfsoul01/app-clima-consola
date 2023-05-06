@@ -14,9 +14,9 @@ class Busqueda {
     this.historial.push(ciudad);
   }
 
+
   async buscarCiudad(lugar = "") {
     // peticion http
-
     const axi= axios.create({
         baseURL:` https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
         params:{
@@ -24,11 +24,12 @@ class Busqueda {
             access_token:MAPBOX_KEY,
             language:'es',
         }
+
       })
 
       const {data}= await axi.get(); // los lugares
      
-      
+
     const ciudades=data.features.map(e=>{
          return e.place_name
     }) 
