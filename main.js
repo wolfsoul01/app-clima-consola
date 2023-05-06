@@ -13,6 +13,7 @@ const main = async () => {
       case 1:
         // mostrar mensaje 
         const {lugar }=await leerInput("Que ciudad desea Buscar: ");
+        busqueda.addLugar(lugar);
         console.log(lugar);
         //Buscar los lugar 
 
@@ -23,6 +24,8 @@ const main = async () => {
         //clima 
 
         //Mostar resultados 
+
+        busqueda.guardarBD();
         break;
 
       case 2:
