@@ -68,7 +68,7 @@ const ciudadesMenu=async (ciudadesArr)=>{
   const choices=ciudadesArr.map(e=>{
     value:e
     name:e    
-  })
+  }) 
 
   const listaCiudades=[{
     type:'list',
